@@ -1,7 +1,7 @@
 {
-  "name": "my-extension",
+  "name": "chrome-extension-github-npm-link",
   "version": "0.1.0",
-  "description": "My Chrome Extension",
+  "description": "js/ts github repo package.json add npm link ",
   "private": true,
   "scripts": {
     "watch": "webpack --mode=development --watch --config config/webpack.config.js",

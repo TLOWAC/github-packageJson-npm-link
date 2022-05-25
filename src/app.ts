@@ -1,20 +1,20 @@
-'use strict';
+"use strict";
 
-import getCurrentTime from './clock';
-import getDay from './day';
-import './app.css';
+import getCurrentTime from "./utils/clock";
+import getDay from "./utils/day";
+import "./app.css";
 
-(function() {
+function main() {
   function setTime(): void {
     const time: string = getCurrentTime();
 
-    document.getElementById('clock')!.innerHTML = time;
+    document.getElementById("clock")!.innerHTML = time;
   }
 
   function setDay(): void {
     const day: string = getDay();
 
-    document.getElementById('day')!.innerHTML = day;
+    document.getElementById("day")!.innerHTML = day;
   }
 
   function setupDashboard(): void {
@@ -28,13 +28,15 @@ import './app.css';
   // Communicate with background file by sending a message
   chrome.runtime.sendMessage(
     {
-      type: 'GREETINGS',
+      type: "GREETINGS",
       payload: {
-        message: 'Hello, my name is Ove. I am from Override app.',
+        message: "Hello, my name is Ove. I am from Override app.",
       },
     },
-    response => {
+    (response) => {
       console.log(response.message);
     }
   );
-})();
+}
+
+main();
